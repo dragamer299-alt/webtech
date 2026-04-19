@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Record Form</title>
+    <script>
+        function validateForm() {
+            let name = document.forms["studentForm"]["name"].value;
+            let reg = document.forms["studentForm"]["reg"].value;
+            let email = document.forms["studentForm"]["email"].value;
+            let phone = document.forms["studentForm"]["phone"].value;
+
+            // Name validation
+            if (name == "" || !/^[A-Za-z ]+$/.test(name)) {
+                alert("Enter a valid Name (alphabets only)");
+                return false;
+            }
+
+            // Register Number validation
+            if (reg == "") {
+                alert("Register Number cannot be empty");
+                return false;
+            }
+
+            // Email validation
+            if (email == "" || !email.includes("@")) {
+                alert("Enter a valid Email");
+                return false;
+            }
+
+            // Phone validation
+            if (phone == "" || !/^[0-9]{10}$/.test(phone)) {
+                alert("Enter a valid 10-digit Phone Number");
+                return false;
+            }
+
+            alert("Form submitted successfully!");
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2>Student Record Form</h2>
+
+    <form name="studentForm" onsubmit="return validateForm()">
+        
+        Name: <input type="text" name="name"><br><br>
+
+        Register Number: <input type="text" name="reg"><br><br>
+
+        Email: <input type="text" name="email"><br><br>
+
+        Phone Number: <input type="text" name="phone"><br><br>
+
+        Gender:
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female<br><br>
+
+        Course:
+        <select name="course">
+            <option value="">Select</option>
+            <option value="BCA">BCA</option>
+            <option value="BSc">BSc</option>
+            <option value="BCom">BCom</option>
+        </select><br><br>
+
+        Address:<br>
+        <textarea name="address"></textarea><br><br>
+
+        <input type="submit" value="Submit">
+
+    </form>
+
+</body>
+</html>
