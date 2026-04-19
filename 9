@@ -1,0 +1,27 @@
+<%@ page import="javax.servlet.http.*" %>
+
+<%
+    String user = request.getParameter("username");
+
+    if(user != null) {
+        session.setAttribute("user", user);
+    }
+
+    String storedUser = (String) session.getAttribute("user");
+%>
+
+<html>
+<body>
+
+<% if(storedUser == null) { %>
+    <form method="post">
+        Enter Name: <input type="text" name="username">
+        <input type="submit" value="Save">
+    </form>
+<% } else { %>
+    <h2>Welcome, <%= storedUser %></h2>
+    <p>Session is active!</p>
+<% } %>
+
+</body>
+</html>
