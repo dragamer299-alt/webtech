@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Types Demo</title>
+
+    <!-- Internal CSS -->
+    <style>
+        h2 {
+            color: blue;
+            text-align: center;
+        }
+
+        p.internal {
+            color: green;
+            font-size: 18px;
+        }
+    </style>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h2>CSS Demonstration</h2>
+
+    <!-- Inline CSS -->
+    <p style="color: red; font-weight: bold;">
+        This is Inline CSS example.
+    </p>
+
+    <!-- Internal CSS -->
+    <p class="internal">
+        This is Internal CSS example.
+    </p>
+
+    <!-- External CSS -->
+    <p class="external">
+        This is External CSS example.
+    </p>
+
+</body>
+</html>
+------------------------------------------------------------
+.external {
+    color: purple;
+    font-size: 20px;
+    text-align: center;
+}
